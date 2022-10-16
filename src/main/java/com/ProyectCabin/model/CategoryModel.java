@@ -25,7 +25,7 @@ public class CategoryModel implements Serializable {
     @Column(name="description")
     private String description;   
     
-    @OneToMany (cascade = {CascadeType.PERSIST},mappedBy = "category")
+    @OneToMany (cascade = {CascadeType.REMOVE},mappedBy = "category")
     @JsonIgnoreProperties({"category","message","reservations"})
     private List<CabinModel> cabins;
 

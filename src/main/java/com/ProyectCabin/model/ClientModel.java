@@ -30,12 +30,12 @@ public class ClientModel implements Serializable{
     @Column(name="age")
     private Integer age;
     
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "client")
     @JsonIgnoreProperties({"client","messages"})
     private List<MessagesModel> messages;
 
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "client")
     @JsonIgnoreProperties("client")
     private List<ReservationsModel> reservations;
 
